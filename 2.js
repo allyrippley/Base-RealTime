@@ -22,3 +22,5 @@ if (args.help || !args.name) {
 var name = args.name;
 
 console.log("Hello " + name);
+
+var say = require("./testing.js");
