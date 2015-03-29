@@ -1,5 +1,5 @@
-function say(filename) {
-  var contents = fs.readFileSync(filename);
+function say(filename,cb) {
+  var contents = fs.readFile(filename,cb);
   return contents;
 }
 

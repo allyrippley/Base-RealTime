@@ -21,6 +21,6 @@ if (args.help || !args.file) {
 
 var hello = require("./testing.js");
 
-
-var contents = hello.say(args.file);
-console.log(contents.toString());
+hello.say(args.file, function(err,contents) {
+  console.log(contents.toString());
+});
