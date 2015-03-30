@@ -22,5 +22,10 @@ if (args.help || !args.file) {
 var hello = require("./testing.js");
 
 hello.say(args.file, function(err,contents) {
-  console.log(contents.toString());
+  if(err) {
+    console.error("Error: " + err);
+  }
+  else {
+    console.log(contents.toString());
+  }
 });
