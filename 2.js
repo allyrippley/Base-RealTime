@@ -1,5 +1,5 @@
 function printHelp() {
-  console.log("1.js (c) Ally Rippley");
+  console.log("2.js (c) Ally Rippley");
   console.log("");
   console.log("usage");
   console.log("--help            print this help");
@@ -14,13 +14,18 @@ var args = require("minimist")(process.argv.slice(2),{
 });
 
 
-if (args.help || !args.name) {
+if (args.help || !args.file) {
   printHelp();
   process.exit(1);
 }
 
-var name = args.name;
+var hello = require("./testing2.js");
 
-console.log("Hello " + name);
-
-var say = require("./testing.js");
+hello.say(args.file, function(err,contents) {
+  if(err) {
+    console.error("Error: " + err);
+  }
+  else {
+    console.log(contents.toString());
+  }
+});
